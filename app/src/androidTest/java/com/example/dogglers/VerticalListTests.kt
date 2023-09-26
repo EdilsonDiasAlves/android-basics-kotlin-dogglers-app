@@ -19,6 +19,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.swipeUp
 import androidx.test.espresso.assertion.ViewAssertions.matches
+import androidx.test.espresso.contrib.RecyclerViewActions
 import androidx.test.espresso.contrib.RecyclerViewActions.scrollToPosition
 import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.rules.ActivityScenarioRule
@@ -52,7 +53,8 @@ class VerticalListTests : BaseTest() {
     @Test
     fun `vertical_scrolling`() {
         onView(withId(R.id.vertical_recycler_view))
-                .perform(swipeUp())
+                .perform(RecyclerViewActions
+                    .scrollToPosition<RecyclerView.ViewHolder>(4))
         onView(withText("Faye")).check(matches(isDisplayed()))
     }
 

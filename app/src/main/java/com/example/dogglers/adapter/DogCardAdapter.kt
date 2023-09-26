@@ -35,7 +35,7 @@ class DogCardAdapter(
     private val layout: Int
 ): RecyclerView.Adapter<DogCardAdapter.DogCardViewHolder>() {
 
-    val dogs: List<Dog> = com.example.dogglers.data.DataSource.dogs
+    private val dogs: List<Dog> = com.example.dogglers.data.DataSource.dogs
 
     /**
      * Initialize view elements
